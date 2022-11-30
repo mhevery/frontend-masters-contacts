@@ -8,9 +8,19 @@ import { RequestHandler, useEndpoint } from "@builder.io/qwik-city";
 import { Contact, CONTACTS } from "./fake-db";
 import CSS from "./index.css?inline";
 
-export const onGet: RequestHandler<Contact[]> = async () => {
+export interface SimpleContact {
+  id: string;
+  name: string;
+  avatar?: string;
+}
+
+export const onGet: RequestHandler<SimpleContact[]> = async () => {
   // Pretend we are fetching data from a database
-  return await Promise.resolve(CONTACTS);
+  return CONTACTS.map((c) => ({
+    name: c.name,
+    id: c.id,
+    avatar: c.avatar,
+  }));
 };
 
 export default component$(() => {
@@ -40,8 +50,10 @@ export default component$(() => {
                 )
                 .map((contact) => (
                   <li>
-                    <img src={contact.avatar} />
-                    {contact.name}
+                    <a href={"/contacts/" + contact.id + "/"}>
+                      <img src={contact.avatar} />
+                      {contact.name}
+                    </a>
                   </li>
                 ))}
             </ul>
