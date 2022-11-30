@@ -1,0 +1,12 @@
+img {
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
