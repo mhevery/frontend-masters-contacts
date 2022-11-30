@@ -4,7 +4,7 @@ import {
   useSignal,
   useStylesScoped$,
 } from "@builder.io/qwik";
-import { RequestHandler, useEndpoint } from "@builder.io/qwik-city";
+import { Link, RequestHandler, useEndpoint } from "@builder.io/qwik-city";
 import { Contact, CONTACTS } from "./fake-db";
 import CSS from "./index.css?inline";
 

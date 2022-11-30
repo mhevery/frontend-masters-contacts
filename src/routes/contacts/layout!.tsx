@@ -4,6 +4,17 @@ import {
   useClientEffect$,
   useSignal,
 } from "@builder.io/qwik";
+import { RequestHandler } from "@builder.io/qwik-city";
+
+export const onRequest: RequestHandler = async ({
+  cookie,
+  response,
+  request,
+}) => {
+  if (!cookie.get("contact-login")) {
+    throw response.redirect("/login/?redirect=" + request.url);
+  }
+};
 
 export default component$(() => {
   return (
