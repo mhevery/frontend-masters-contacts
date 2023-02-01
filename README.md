@@ -1,3 +1,6 @@
+# Watch the Course 🚀
+This application is a companion to the [Introduction to Qwik for Instant-Loading Websites](https://frontendmasters.com/courses/qwik/) course on [Frontend Masters](https://frontendmasters.com/)
+
 # Qwik City App ⚡️
 
 - [Qwik Docs](https://qwik.builder.io/)
